@@ -270,8 +270,6 @@ function showProfile(prof) {
       document.location.href='<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/').'/' ?>';
     }
     j = j1.data;
-            console.log(j.devices);
-
     if (j.description !== undefined && j.description) {
       $("#profile_desc").text(j.description);
       $("#profile_desc").css("display","inline-block");
@@ -330,8 +328,7 @@ function showProfile(prof) {
     resetDevices(false);
     // first handle the guess_os part
     if (!handleGuessOs(mydev))
-      return;
-     
+      return; 
     // now the full devices list
     $.each(j.devices,function(i,v) {
       // Now consider devices that cannot be configured due to unsupported
@@ -530,8 +527,18 @@ function handleGuessOs(recognisedDevice) {
     if (recognisedDevice == null)
         return true;
     if(recognisedDevice.redirect != '0') {
-         alert(recognisedDevice.redirect);
-    } 
+        $('.device_info').html('');
+        $('.more_info_b').hide();
+        $("#g_"+recognisedOS+",#g_or_"+recognisedOS).addClass('hasAdditonalInfo');
+        i_div = $("#info_g_"+recognisedOS);
+        t =  guiTexts.redirect+
+            "<br><span class='redirect_link'><a href='"+recognisedDevice.redirect+"' target='_blank'>"+guiTexts.continue+"</a></span>";
+        i_div.html(t);
+        $(".redirect_link").click(function(event) {
+         i_div.hide('fast');
+      });
+      return true;
+    }
   // handle devices that canot be configured due to lack of support
   // for required EAP methods
   /*
@@ -601,7 +608,6 @@ function handleGuessOs(recognisedDevice) {
 
 function changeDevice(devId) {
   device = findDevice(devId);
-  console.log(device);
   if (device.options.hs20 === undefined) {
       recognisedOShs20 = 0;
   } else {
@@ -629,7 +635,6 @@ function updateGuessOsDiv(device) {
   $("#device_message").hide();
   $("#guess_os").empty();
   $("#download_another").remove();
-
   $("#download_text_1").empty();
   if (device != null) {
       $("#download_text_1").append("<div>"+guiTexts.downloadFor+" "+device.display+"</div>")
@@ -638,7 +643,6 @@ function updateGuessOsDiv(device) {
         $("#device_message").html(guiTexts.unconfigurable);
         $("#device_message").show();
       } else {
-
       div1 = "<div>\
           <div class='button_wrapper'>\
             <button name='"+device.id+"' class='guess_os' id='g_"+device.id+"'>\
