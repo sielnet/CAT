@@ -5,17 +5,17 @@
 #
 # Translators:
 # eduroam_devel <stefan.winter@restena.lu>, 2016
-# University of Ruse <support@uni-ruse.bg>, 2022
+# University of Ruse <support@uni-ruse.bg>, 2023
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-16 13:12+0200\n"
+"POT-Creation-Date: 2023-07-18 13:14+0200\n"
 "PO-Revision-Date: 2016-07-15 08:52+0000\n"
-"Last-Translator: University of Ruse <support@uni-ruse.bg>, 2022\n"
-"Language-Team: Bulgarian (Bulgaria) (https://www.transifex.com/eduroam_devel/"
+"Last-Translator: University of Ruse <support@uni-ruse.bg>, 2023\n"
+"Language-Team: Bulgarian (Bulgaria) (https://app.transifex.com/eduroam_devel/"
 "teams/11799/bg_BG/)\n"
 "Language: bg_BG\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,8 @@ msgid "Product is not configured to run this check."
 msgstr "Продуктът не е конфигуриран да стартира тази проверка."
 
 #: core/diag/AbstractTest.php:338 core/diag/RADIUSTestsUI.php:247
-#: core/diag/RADIUSTestsUI.php:262 web/diag/action_realmcheck.php:610
-#: web/diag/action_realmcheck.php:626
+#: core/diag/RADIUSTestsUI.php:262 web/diag/action_realmcheck.php:614
+#: web/diag/action_realmcheck.php:630
 msgid "This check was skipped."
 msgstr "Тази проверка беше пропусната."
 
@@ -66,7 +66,7 @@ msgid ""
 msgstr "RADIUS сървърът отхвърли заявката за аутентикация след EAP разговор."
 
 #: core/diag/AbstractTest.php:381 core/diag/RADIUSTestsUI.php:480
-#: web/diag/action_realmcheck.php:130
+#: web/diag/action_realmcheck.php:134
 msgid "Connection refused"
 msgstr "Връзката е отхвърлена."
 
@@ -489,68 +489,68 @@ msgid ""
 "Access-Reject as planned. Some properties of the connection attempt were sub-"
 "optimal; the list is below."
 msgstr ""
-"<strong>Тестът частично е успешен</strong>: двупосочната RADIUS комуникация "
+"<strong>Тестът e частично успешен</strong>: двупосочната RADIUS комуникация "
 "с множество round-trips се проведе и завърши с Access-Reject както е "
 "планирано. Някои свойства на опита за връзка бяха неоптимални; списъкът е по-"
 "долу."
 
-#: core/diag/RADIUSTestsUI.php:86 web/diag/action_realmcheck.php:132
+#: core/diag/RADIUSTestsUI.php:86 web/diag/action_realmcheck.php:136
 msgid "All tests passed."
 msgstr "Всички тестове минаха."
 
-#: core/diag/RADIUSTestsUI.php:87 web/diag/action_realmcheck.php:133
+#: core/diag/RADIUSTestsUI.php:87 web/diag/action_realmcheck.php:137
 msgid "There were some warnings."
 msgstr "Имаше някои предупреждения."
 
-#: core/diag/RADIUSTestsUI.php:88 web/diag/action_realmcheck.php:134
+#: core/diag/RADIUSTestsUI.php:88 web/diag/action_realmcheck.php:138
 msgid "There were some errors."
 msgstr "Имаше някои грешки."
 
-#: core/diag/RADIUSTestsUI.php:89 web/diag/action_realmcheck.php:135
+#: core/diag/RADIUSTestsUI.php:89 web/diag/action_realmcheck.php:139
 msgid "There were some remarks."
 msgstr "Имаше някои забележки."
 
-#: core/diag/RADIUSTestsUI.php:98 web/diag/action_realmcheck.php:113
+#: core/diag/RADIUSTestsUI.php:98 web/diag/action_realmcheck.php:117
 msgid "PASS"
 msgstr "УСПЕХ"
 
-#: core/diag/RADIUSTestsUI.php:99 web/diag/action_realmcheck.php:114
+#: core/diag/RADIUSTestsUI.php:99 web/diag/action_realmcheck.php:118
 msgid "FAIL"
 msgstr "НЕУСПЕХ"
 
-#: core/diag/RADIUSTestsUI.php:102 web/diag/action_realmcheck.php:155
+#: core/diag/RADIUSTestsUI.php:102 web/diag/action_realmcheck.php:159
 msgid "Subject:"
 msgstr "Предмет:"
 
-#: core/diag/RADIUSTestsUI.php:103 web/diag/action_realmcheck.php:156
+#: core/diag/RADIUSTestsUI.php:103 web/diag/action_realmcheck.php:160
 msgid "Issuer:"
 msgstr "Издател:"
 
-#: core/diag/RADIUSTestsUI.php:104 web/diag/action_realmcheck.php:157
+#: core/diag/RADIUSTestsUI.php:104 web/diag/action_realmcheck.php:161
 msgid "Valid from:"
 msgstr "Валидно от:"
 
-#: core/diag/RADIUSTestsUI.php:105 web/diag/action_realmcheck.php:158
+#: core/diag/RADIUSTestsUI.php:105 web/diag/action_realmcheck.php:162
 msgid "Valid to:"
 msgstr "Валидно до:"
 
-#: core/diag/RADIUSTestsUI.php:106 web/diag/action_realmcheck.php:159
+#: core/diag/RADIUSTestsUI.php:106 web/diag/action_realmcheck.php:163
 msgid "Serial number:"
 msgstr "Сериен номер:"
 
-#: core/diag/RADIUSTestsUI.php:107 web/diag/action_realmcheck.php:160
+#: core/diag/RADIUSTestsUI.php:107 web/diag/action_realmcheck.php:164
 msgid "SHA1 fingerprint:"
 msgstr "SHA1 fingerprint:"
 
-#: core/diag/RADIUSTestsUI.php:108 web/diag/action_realmcheck.php:143
+#: core/diag/RADIUSTestsUI.php:108 web/diag/action_realmcheck.php:147
 msgid "Server certificate"
 msgstr "Сертификат на сървър"
 
-#: core/diag/RADIUSTestsUI.php:109 web/diag/action_realmcheck.php:144
+#: core/diag/RADIUSTestsUI.php:109 web/diag/action_realmcheck.php:148
 msgid "Subject"
 msgstr "Предмет"
 
-#: core/diag/RADIUSTestsUI.php:110 web/diag/action_realmcheck.php:145
+#: core/diag/RADIUSTestsUI.php:110 web/diag/action_realmcheck.php:149
 msgid "Issuer"
 msgstr "Издател"
 
@@ -558,20 +558,20 @@ msgstr "Издател"
 msgid "Policies"
 msgstr "Политики"
 
-#: core/diag/RADIUSTestsUI.php:112 web/diag/action_realmcheck.php:148
+#: core/diag/RADIUSTestsUI.php:112 web/diag/action_realmcheck.php:152
 msgid "crlDistributionPoint"
 msgstr "crlDistributionPoint"
 
-#: core/diag/RADIUSTestsUI.php:113 web/diag/action_realmcheck.php:149
+#: core/diag/RADIUSTestsUI.php:113 web/diag/action_realmcheck.php:153
 msgid "authorityInfoAccess"
 msgstr "authorityInfoAccess"
 
-#: core/diag/RADIUSTestsUI.php:114 web/diag/action_realmcheck.php:146
+#: core/diag/RADIUSTestsUI.php:114 web/diag/action_realmcheck.php:150
 msgid "SubjectAltName"
 msgstr "Алтернативно име на предмета"
 
-#: core/diag/RADIUSTestsUI.php:212 web/diag/action_realmcheck.php:542
-#: web/diag/action_realmcheck.php:551 web/diag/show_realmcheck.php:134
+#: core/diag/RADIUSTestsUI.php:212 web/diag/action_realmcheck.php:546
+#: web/diag/action_realmcheck.php:555 web/diag/show_realmcheck.php:134
 msgid "Overview"
 msgstr "Преглед"
 
@@ -580,7 +580,7 @@ msgid "DNS chekcs"
 msgstr "DNS проверки"
 
 #. output in friendly words
-#: core/diag/RADIUSTestsUI.php:217 web/diag/action_realmcheck.php:577
+#: core/diag/RADIUSTestsUI.php:217 web/diag/action_realmcheck.php:581
 msgid "Checking NAPTR existence:"
 msgstr "Проверяване за наличие на NAPTR."
 
@@ -589,11 +589,11 @@ msgstr "Проверяване за наличие на NAPTR."
 #. * no NAPTRs for domain; this is not an error, simply means that realm is not doing dynamic discovery for any service
 #.
 #: core/diag/RADIUSTestsUI.php:220 core/diag/RFC7585Tests.php:156
-#: web/diag/action_realmcheck.php:580
+#: web/diag/action_realmcheck.php:584
 msgid "This realm has no NAPTR records."
 msgstr "Тази област няма NAPTR записи."
 
-#: core/diag/RADIUSTestsUI.php:223 web/diag/action_realmcheck.php:583
+#: core/diag/RADIUSTestsUI.php:223 web/diag/action_realmcheck.php:587
 msgid ""
 "This realm has NAPTR records, but none are related to this roaming "
 "consortium."
@@ -602,62 +602,62 @@ msgstr ""
 "роуминг консорциум."
 
 #. if none of the possible negative retvals, then we have matching NAPTRs
-#: core/diag/RADIUSTestsUI.php:226 web/diag/action_realmcheck.php:586
+#: core/diag/RADIUSTestsUI.php:226 web/diag/action_realmcheck.php:590
 #, php-format
 msgid "This realm has %d NAPTR records relating to this roaming consortium."
 msgstr ""
 "Тази област има %d NAPTR записи, отнасящи се до този роуминг консорциум."
 
-#: core/diag/RADIUSTestsUI.php:231 web/diag/action_realmcheck.php:592
+#: core/diag/RADIUSTestsUI.php:231 web/diag/action_realmcheck.php:596
 msgid "Checking NAPTR compliance (flag = S and regex = {empty}):"
 msgstr "Проверка за NAPTR съответствие (flag = S и regex = {empty}):"
 
 #: core/diag/RADIUSTestsUI.php:237 core/diag/RADIUSTestsUI.php:250
-#: web/diag/action_realmcheck.php:599 web/diag/action_realmcheck.php:613
+#: web/diag/action_realmcheck.php:603 web/diag/action_realmcheck.php:617
 #, php-format
 msgid "At least one NAPTR with invalid content found!"
 msgstr "Намерен е поне един NAPTR с невалидно съдържание!"
 
-#: core/diag/RADIUSTestsUI.php:244 web/diag/action_realmcheck.php:607
+#: core/diag/RADIUSTestsUI.php:244 web/diag/action_realmcheck.php:611
 msgid "Checking SRVs:"
 msgstr "Проверяване на SRV записите:"
 
 #. print number of successfully retrieved SRV targets
-#: core/diag/RADIUSTestsUI.php:253 web/diag/action_realmcheck.php:616
+#: core/diag/RADIUSTestsUI.php:253 web/diag/action_realmcheck.php:620
 #, php-format
 msgid "%d host names discovered."
 msgstr "Открити са имена на %d хостове."
 
-#: core/diag/RADIUSTestsUI.php:259 web/diag/action_realmcheck.php:623
+#: core/diag/RADIUSTestsUI.php:259 web/diag/action_realmcheck.php:627
 msgid "Checking IP address resolution:"
 msgstr "Проверяване разпределението на IP адреси:"
 
-#: core/diag/RADIUSTestsUI.php:265 web/diag/action_realmcheck.php:629
+#: core/diag/RADIUSTestsUI.php:265 web/diag/action_realmcheck.php:633
 #, php-format
 msgid "At least one hostname could not be resolved!"
 msgstr "Поне един хост не можа да бъде намерен!"
 
 #. print number of successfully retrieved SRV targets
-#: core/diag/RADIUSTestsUI.php:268 web/diag/action_realmcheck.php:632
+#: core/diag/RADIUSTestsUI.php:268 web/diag/action_realmcheck.php:636
 #, php-format
 msgid "%d IP addresses resolved."
 msgstr "%d IP адреси са намерени."
 
-#: core/diag/RADIUSTestsUI.php:274 web/diag/action_realmcheck.php:640
-#: web/diag/action_realmcheck.php:642
+#: core/diag/RADIUSTestsUI.php:274 web/diag/action_realmcheck.php:644
+#: web/diag/action_realmcheck.php:646
 #, php-format
 msgid "Realm is <strong>%s</strong> "
 msgstr "Област е <strong>%s</strong>."
 
-#: core/diag/RADIUSTestsUI.php:276 web/diag/action_realmcheck.php:640
+#: core/diag/RADIUSTestsUI.php:276 web/diag/action_realmcheck.php:644
 msgid "with no DNS errors encountered. Congratulations!"
 msgstr "Никакви DNS грешки не са открити. Поздравления!"
 
-#: core/diag/RADIUSTestsUI.php:278 web/diag/action_realmcheck.php:642
+#: core/diag/RADIUSTestsUI.php:278 web/diag/action_realmcheck.php:646
 msgid "but there were DNS errors! Check them!"
 msgstr "но имаше DNS грешки! Проверете ги!"
 
-#: core/diag/RADIUSTestsUI.php:278 web/diag/action_realmcheck.php:642
+#: core/diag/RADIUSTestsUI.php:278 web/diag/action_realmcheck.php:646
 msgid ""
 "You should re-run the tests after fixing the errors; more errors might be "
 "uncovered at that point. The exact error causes are listed below."
@@ -666,31 +666,31 @@ msgstr ""
 "могат да бъдат открити още грешки. Точните причини за грешка са изброени по-"
 "долу."
 
-#: core/diag/RADIUSTestsUI.php:287 web/diag/action_realmcheck.php:570
+#: core/diag/RADIUSTestsUI.php:287 web/diag/action_realmcheck.php:574
 msgid "Dynamic discovery test is not configured"
-msgstr "Тест за динамично откриване не е конфигуриран."
+msgstr "Не е конфигуриран тест за динамично откриване."
 
-#: core/diag/RADIUSTestsUI.php:289 web/diag/action_realmcheck.php:543
-#: web/diag/action_realmcheck.php:703 web/diag/show_realmcheck.php:135
+#: core/diag/RADIUSTestsUI.php:289 web/diag/action_realmcheck.php:547
+#: web/diag/action_realmcheck.php:707 web/diag/show_realmcheck.php:135
 msgid "Static connectivity tests"
 msgstr "Тестове на статичната свързаност."
 
 #: core/diag/RADIUSTestsUI.php:293 core/diag/RADIUSTestsUI.php:299
-#: web/diag/action_realmcheck.php:415 web/diag/action_realmcheck.php:420
-#: web/diag/action_realmcheck.php:425
+#: web/diag/action_realmcheck.php:419 web/diag/action_realmcheck.php:424
+#: web/diag/action_realmcheck.php:429
 msgid "See the appropriate tab for details."
 msgstr "Вижте подходящия таб за подробности."
 
-#: core/diag/RADIUSTestsUI.php:296 web/diag/action_realmcheck.php:544
-#: web/diag/action_realmcheck.php:708 web/diag/show_realmcheck.php:139
+#: core/diag/RADIUSTestsUI.php:296 web/diag/action_realmcheck.php:548
+#: web/diag/action_realmcheck.php:712 web/diag/show_realmcheck.php:139
 msgid "Dynamic connectivity tests"
 msgstr "Тестове на динамичната свързаност."
 
-#: core/diag/RADIUSTestsUI.php:310 web/diag/action_realmcheck.php:728
+#: core/diag/RADIUSTestsUI.php:310 web/diag/action_realmcheck.php:732
 msgid "STATIC connectivity tests"
 msgstr "Тестове за СТАТИЧНАТА свързаност."
 
-#: core/diag/RADIUSTestsUI.php:312 web/diag/action_realmcheck.php:730
+#: core/diag/RADIUSTestsUI.php:312 web/diag/action_realmcheck.php:734
 msgid ""
 "This check sends a request for the realm through various entry points of the "
 "roaming consortium infrastructure. The request will contain the 'Operator-"
@@ -707,37 +707,37 @@ msgstr ""
 "успешно - така че очакваният резултат е да получим Access-Reject след "
 "приключване на EAP разговора. "
 
-#: core/diag/RADIUSTestsUI.php:318 web/diag/action_realmcheck.php:734
-#: web/diag/action_realmcheck.php:877
+#: core/diag/RADIUSTestsUI.php:318 web/diag/action_realmcheck.php:738
+#: web/diag/action_realmcheck.php:881
 #, php-format
 msgid "Testing from: %s"
 msgstr "Тестване от: %s"
 
-#: core/diag/RADIUSTestsUI.php:324 web/diag/action_realmcheck.php:161
+#: core/diag/RADIUSTestsUI.php:324 web/diag/action_realmcheck.php:165
 msgid "Connected to undetermined server"
 msgstr "Свързан към неопределен сървър"
 
 #: core/diag/RADIUSTestsUI.php:324 core/diag/RADIUSTestsUI.php:470
-#: web/diag/action_realmcheck.php:268 web/diag/action_realmcheck.php:379
-#: web/diag/action_realmcheck.php:399 web/diag/action_realmcheck.php:460
+#: web/diag/action_realmcheck.php:272 web/diag/action_realmcheck.php:383
+#: web/diag/action_realmcheck.php:403 web/diag/action_realmcheck.php:464
 #, php-format
 msgid "elapsed time: %sms."
 msgstr "Изтекло време: %sms."
 
-#: core/diag/RADIUSTestsUI.php:349 web/diag/action_realmcheck.php:390
-#: web/diag/action_realmcheck.php:450
+#: core/diag/RADIUSTestsUI.php:349 web/diag/action_realmcheck.php:394
+#: web/diag/action_realmcheck.php:454
 msgid "Extensions"
 msgstr "Разширения"
 
-#: core/diag/RADIUSTestsUI.php:351 web/diag/action_realmcheck.php:391
+#: core/diag/RADIUSTestsUI.php:351 web/diag/action_realmcheck.php:395
 msgid "show server certificate details"
 msgstr "Покажи подробно сертификата на сървъра."
 
-#: core/diag/RADIUSTestsUI.php:362 web/diag/action_realmcheck.php:788
+#: core/diag/RADIUSTestsUI.php:362 web/diag/action_realmcheck.php:792
 msgid "Checking server handshake..."
 msgstr "Проверяване на server handshake..."
 
-#: core/diag/RADIUSTestsUI.php:403 web/diag/action_realmcheck.php:125
+#: core/diag/RADIUSTestsUI.php:403 web/diag/action_realmcheck.php:129
 #: web/diag/show_realmcheck.php:62
 msgid "more"
 msgstr "още"
@@ -750,35 +750,35 @@ msgstr "Тестът е неуспешен"
 msgid "Client certificate"
 msgstr "Клиентски сертификат"
 
-#: core/diag/RADIUSTestsUI.php:441 web/diag/action_realmcheck.php:116
+#: core/diag/RADIUSTestsUI.php:441 web/diag/action_realmcheck.php:120
 msgid "expected result: "
 msgstr "очакван резултат:"
 
-#: core/diag/RADIUSTestsUI.php:450 web/diag/action_realmcheck.php:117
+#: core/diag/RADIUSTestsUI.php:450 web/diag/action_realmcheck.php:121
 msgid "Server accepted this client certificate"
 msgstr "Сървърът прие клиентския сертификат."
 
-#: core/diag/RADIUSTestsUI.php:453 web/diag/action_realmcheck.php:122
+#: core/diag/RADIUSTestsUI.php:453 web/diag/action_realmcheck.php:126
 msgid "You should update your list of accredited CAs"
 msgstr "Вие трябва да актуализирате Вашия списък с акредитирани CA."
 
-#: core/diag/RADIUSTestsUI.php:455 web/diag/action_realmcheck.php:123
+#: core/diag/RADIUSTestsUI.php:455 web/diag/action_realmcheck.php:127
 msgid "Get it from here."
 msgstr "Вземете ги оттук."
 
-#: core/diag/RADIUSTestsUI.php:457 web/diag/action_realmcheck.php:120
+#: core/diag/RADIUSTestsUI.php:457 web/diag/action_realmcheck.php:124
 msgid "Server did not accept this client certificate - reason"
 msgstr "Сървърът не прие клиентския сертификат - причина."
 
-#: core/diag/RADIUSTestsUI.php:463 web/diag/action_realmcheck.php:118
+#: core/diag/RADIUSTestsUI.php:463 web/diag/action_realmcheck.php:122
 msgid "Server accepted this client certificate, but should not have"
 msgstr "Сървърът прие клиентския сертификат, но не трябваше да го приема."
 
-#: core/diag/RADIUSTestsUI.php:466 web/diag/action_realmcheck.php:119
+#: core/diag/RADIUSTestsUI.php:466 web/diag/action_realmcheck.php:123
 msgid "Server did not accept this client certificate"
 msgstr "Сървърът не прие клиентския сертификат."
 
-#: core/diag/RADIUSTestsUI.php:473 web/diag/action_realmcheck.php:121
+#: core/diag/RADIUSTestsUI.php:473 web/diag/action_realmcheck.php:125
 msgid "Rest of tests for this CA skipped"
 msgstr "Останалите тестове за това CA са пропуснати."
 
@@ -786,28 +786,28 @@ msgstr "Останалите тестове за това CA са пропусн
 msgid "These tests were skipped because of previous errors."
 msgstr "Тестовете бяха пропуснати, заради грешки, възникнали преди това."
 
-#: core/diag/RADIUSTestsUI.php:512 web/diag/action_realmcheck.php:774
+#: core/diag/RADIUSTestsUI.php:512 web/diag/action_realmcheck.php:778
 msgid "DYNAMIC connectivity tests"
 msgstr "Тестове за ДИНАМИЧНА свързаност"
 
-#: core/diag/RADIUSTestsUI.php:522 web/diag/action_realmcheck.php:787
+#: core/diag/RADIUSTestsUI.php:522 web/diag/action_realmcheck.php:791
 msgid "Some errors were found during the tests, see below"
 msgstr "По време на тестовете бяха открити някои грешки, вижте по-долу."
 
-#: core/diag/RADIUSTestsUI.php:528 web/diag/action_realmcheck.php:787
+#: core/diag/RADIUSTestsUI.php:528 web/diag/action_realmcheck.php:791
 msgid "All tests passed, congratulations!"
 msgstr "Всички тестове са преминати, поздравления!"
 
-#: core/diag/RADIUSTestsUI.php:529 web/diag/action_realmcheck.php:127
-#: web/diag/action_realmcheck.php:788 web/diag/show_realmcheck.php:60
+#: core/diag/RADIUSTestsUI.php:529 web/diag/action_realmcheck.php:131
+#: web/diag/action_realmcheck.php:792 web/diag/show_realmcheck.php:60
 msgid "Show detailed information for all tests"
 msgstr "Покажи подробна информация за всички тестове."
 
-#: core/diag/RADIUSTestsUI.php:531 web/diag/action_realmcheck.php:824
+#: core/diag/RADIUSTestsUI.php:531 web/diag/action_realmcheck.php:828
 msgid "Checking if certificates from  CAs are accepted..."
 msgstr "Проверяване дали сертификатите от CAs са приети ..."
 
-#: core/diag/RADIUSTestsUI.php:531 web/diag/action_realmcheck.php:824
+#: core/diag/RADIUSTestsUI.php:531 web/diag/action_realmcheck.php:828
 msgid ""
 "A few client certificates will be tested to check if servers are resistant "
 "to some certificate problems."
@@ -961,7 +961,7 @@ msgstr ""
 
 #: core/diag/Sociopath.php:88
 msgid ""
-"Have you ever used the network succesfully, e.g. at your home institution "
+"Have you ever used the network successfully, e.g. at your home institution "
 "without roaming?"
 msgstr ""
 "Използвали ли сте някога мрежата успешно, например във Вашата институция без "
@@ -973,7 +973,7 @@ msgstr ""
 #, php-format
 msgid ""
 "If your device has never worked before with this setup, then very likely "
-"your device configuation is wrong. %s"
+"your device configuration is wrong. %s"
 msgstr ""
 "Ако Вашето устройство никога преди не е работило с тази настройка, тогава "
 "много вероятно е конфигурацията на устройството Ви да е грешна. %s"
@@ -1299,8 +1299,8 @@ msgid "Diagnostics results for selected realms"
 msgstr "Резултатите от диагностичните тестове за избраните области"
 
 #: web/skins/modern/diag/diag.php:575
-msgid "An unknown problem occured"
-msgstr "Възникна неизвестен проблем "
+msgid "An unknown problem occurred"
+msgstr "Възникна неизвестен проблем"
 
 #: web/skins/modern/diag/diag.php:578
 msgid "This test includes checking of the following realm"
@@ -1434,82 +1434,82 @@ msgstr "СТАТИЧЕН"
 msgid "DYNAMIC"
 msgstr "ДИНАМИЧЕН"
 
-#: web/diag/action_realmcheck.php:115
+#: web/diag/action_realmcheck.php:119
 msgid "Client certificate:"
 msgstr "Клиентски сертификат:"
 
-#: web/diag/action_realmcheck.php:147
+#: web/diag/action_realmcheck.php:151
 msgid "Certificate policies"
 msgstr "Сертификатиционни политики"
 
-#: web/diag/action_realmcheck.php:150 web/diag/show_realmcheck.php:61
+#: web/diag/action_realmcheck.php:154 web/diag/show_realmcheck.php:61
 msgid "Hide detailed information for all tests"
 msgstr "Скрий подробната информация за всички тестове."
 
-#: web/diag/action_realmcheck.php:213
+#: web/diag/action_realmcheck.php:217
 msgid "Some required input is missing!"
 msgstr "Липсват някои изисквани входни данни."
 
-#: web/diag/action_realmcheck.php:438
+#: web/diag/action_realmcheck.php:442
 msgid "Server certificate details:"
 msgstr "Детайли на сертификата на сървъра"
 
-#: web/diag/action_realmcheck.php:537 web/diag/show_realmcheck.php:126
+#: web/diag/action_realmcheck.php:541 web/diag/show_realmcheck.php:126
 #, php-format
 msgid "Realm testing for: %s"
 msgstr "Тестване на област за: %s"
 
-#: web/diag/action_realmcheck.php:545 web/diag/action_realmcheck.php:714
-#: web/diag/action_realmcheck.php:776
+#: web/diag/action_realmcheck.php:549 web/diag/action_realmcheck.php:718
+#: web/diag/action_realmcheck.php:780
 msgid "OpenRoaming connectivity tests"
 msgstr "Тестове за свързаност на OpenRoaming"
 
-#: web/diag/action_realmcheck.php:546
+#: web/diag/action_realmcheck.php:550
 msgid "Live login tests"
 msgstr "Тестове по време на влизане."
 
-#: web/diag/action_realmcheck.php:559
+#: web/diag/action_realmcheck.php:563
 msgid "DNS checks"
 msgstr "DNS проверки"
 
-#: web/diag/action_realmcheck.php:565
+#: web/diag/action_realmcheck.php:569
 msgid "OpenRoaming DNS checks"
 msgstr "Проверка на OpenRoaming DNS"
 
-#: web/diag/action_realmcheck.php:572
+#: web/diag/action_realmcheck.php:576
 msgid "OpenRoaming connectivity test is not configured"
 msgstr "Не е конфигуриран тест за свързаност OpenRoaming"
 
-#: web/diag/action_realmcheck.php:596
+#: web/diag/action_realmcheck.php:600
 msgid "No issues found."
 msgstr "Няма намерени изходи."
 
-#: web/diag/action_realmcheck.php:725 web/diag/show_realmcheck.php:151
+#: web/diag/action_realmcheck.php:729 web/diag/show_realmcheck.php:151
 msgid "Repeat static connectivity tests"
 msgstr "Повторете тестовете за статичната свързаност."
 
-#: web/diag/action_realmcheck.php:739 web/diag/action_realmcheck.php:797
-#: web/diag/action_realmcheck.php:814
+#: web/diag/action_realmcheck.php:743 web/diag/action_realmcheck.php:801
+#: web/diag/action_realmcheck.php:818
 msgid "testing..."
 msgstr "тестване ..."
 
-#: web/diag/action_realmcheck.php:766 web/diag/show_realmcheck.php:162
+#: web/diag/action_realmcheck.php:770 web/diag/show_realmcheck.php:162
 msgid "Repeat dynamic connectivity tests"
 msgstr "Повторете тестовете за динамичната свързаност."
 
-#: web/diag/action_realmcheck.php:766
+#: web/diag/action_realmcheck.php:770
 msgid "Repeat OpenRoaming connectivity tests"
 msgstr "Повторете тестовете за свързаност OpenRoaming"
 
-#: web/diag/action_realmcheck.php:817
+#: web/diag/action_realmcheck.php:821
 msgid "not implemented yet"
 msgstr "все още не е изпълнен"
 
-#: web/diag/action_realmcheck.php:838
+#: web/diag/action_realmcheck.php:842
 msgid "Live login test"
 msgstr "Тест по време на влизане."
 
-#: web/diag/action_realmcheck.php:851
+#: web/diag/action_realmcheck.php:855
 msgid ""
 "If you enter an existing login credential here, you can test the actual "
 "authentication from various checkpoints all over the world."
@@ -1517,7 +1517,7 @@ msgstr ""
 "Ако тук въведете съществуваща самоличност, може да тествате действителната "
 "аутентикация от различни точки за влизане по целия свят."
 
-#: web/diag/action_realmcheck.php:852
+#: web/diag/action_realmcheck.php:856
 msgid ""
 "The test will use all EAP types you have set in your profile information to "
 "check whether the right CAs and server names are used, and of course whether "
@@ -1529,7 +1529,7 @@ msgstr ""
 "се, дали влизане с тези лични данни и даденият EAP тип действително работи. "
 "Ако сте настроили анонимно външно ID, тестът ще го използва."
 
-#: web/diag/action_realmcheck.php:853
+#: web/diag/action_realmcheck.php:857
 msgid ""
 "Note: the tool purposefully does not offer you to save these credentials, "
 "and they will never be saved in any way on the server side. Please use only "
@@ -1541,43 +1541,43 @@ msgstr ""
 "използвайте само <strong>временни тестови акаунти</strong> тук; постоянно "
 "валидни тестови акаунти се считат за вредни!"
 
-#: web/diag/action_realmcheck.php:861
+#: web/diag/action_realmcheck.php:865
 msgid "Password-based EAP types"
 msgstr "Password-based EAP типове"
 
-#: web/diag/action_realmcheck.php:862
+#: web/diag/action_realmcheck.php:866
 msgid "Real (inner) username:"
 msgstr "Реални (вътрешни) потребителски имена:"
 
-#: web/diag/action_realmcheck.php:863
+#: web/diag/action_realmcheck.php:867
 msgid "Anonymous outer ID (optional):"
 msgstr "Анонимен външен ID (опция):"
 
-#: web/diag/action_realmcheck.php:864
+#: web/diag/action_realmcheck.php:868
 msgid "Password:"
 msgstr "Парола:"
 
-#: web/diag/action_realmcheck.php:868
+#: web/diag/action_realmcheck.php:872
 msgid "Certificate-based EAP types"
 msgstr "Сертификат-базирани EAP типове"
 
-#: web/diag/action_realmcheck.php:869
+#: web/diag/action_realmcheck.php:873
 msgid "Certificate file (.p12 or .pfx):"
 msgstr "Файл на сертификат (.p12 или .pfx):"
 
-#: web/diag/action_realmcheck.php:870
+#: web/diag/action_realmcheck.php:874
 msgid "Certificate password, if any:"
 msgstr "Парола за сертификат, ако има:"
 
-#: web/diag/action_realmcheck.php:871
+#: web/diag/action_realmcheck.php:875
 msgid "Username, if different from certificate Subject:"
 msgstr "Потребителско име, ако се различава от Subject полето на сертификата:"
 
-#: web/diag/action_realmcheck.php:873
+#: web/diag/action_realmcheck.php:877
 msgid "Submit credentials"
 msgstr "Изпратете личните данни"
 
-#: web/diag/action_realmcheck.php:895
+#: web/diag/action_realmcheck.php:899
 #, php-format
 msgid "Return to %s administrator area"
 msgstr "Върнете се към %s администраторска област"
@@ -1739,12 +1739,12 @@ msgid "<strong>Test successful.</strong>"
 msgstr "<strong>Тестът е успешен.</strong>"
 
 #: web/diag/radius_tests.php:177
-msgid "<strong>Test partially successful</strong>: authentication succeded."
+msgid "<strong>Test partially successful</strong>: authentication succeeded."
 msgstr "<strong>Тестът е частично успешен</strong>: аутентикацията е успешна."
 
 #: web/diag/radius_tests.php:180
-msgid "<strong>Test FAILED</strong>: authentication succeded."
-msgstr "<strong>Тестът се провали</strong>: аутентикацията е успешна."
+msgid "<strong>Test FAILED</strong>: authentication succeeded."
+msgstr "<strong>Тестът е неуспешен</strong>: аутентикацията е успешна."
 
 #: web/diag/radius_tests.php:185
 msgid ""
@@ -1796,7 +1796,7 @@ msgid ""
 "conversation with multiple round-trips was carried out, and ended in an "
 "Access-Reject as planned."
 msgstr ""
-"<strong>Тестът частично е успешен</strong>: двупосочната RADIUS комуникация "
+"<strong>Тестът e частично успешен</strong>: двупосочната RADIUS комуникация "
 "с множество round-trips се проведе и завърши с Access-Reject както се "
 "очакваше."
 
@@ -1860,19 +1860,19 @@ msgstr "Token-ът в заявката не съществува, не мога�
 
 #: web/skins/modern/diag/js/diag_js.php:33
 msgid "All connectivity tests passed"
-msgstr ""
+msgstr "Всички тестове за свързаност минаха"
 
 #: web/skins/modern/diag/js/diag_js.php:34
 msgid "There were some warnings from connectivity tests"
-msgstr ""
+msgstr "Имаше предупреждения от тестовете за свързаност"
 
 #: web/skins/modern/diag/js/diag_js.php:35
 msgid "There were some remarks from connectivity tests"
-msgstr ""
+msgstr "Имаше някои забележки от тестовете за свързаност"
 
 #: web/skins/modern/diag/js/diag_js.php:36
 msgid "There were some errors from connectivity tests"
-msgstr ""
+msgstr "Имаше грешки от тестовете за свързаност"
 
 #: web/skins/modern/diag/js/diag_js.php:46
 msgid "Select institiution:"
@@ -1988,17 +1988,17 @@ msgstr "Областта не съществува"
 
 #: web/skins/modern/diag/js/diag_js.php:300
 msgid "Running connectivity tests for this realm"
-msgstr ""
+msgstr "Стартирани са тестове на свързаността за този домейн"
 
 #: web/skins/modern/diag/js/diag_js.php:301
 msgid "New tests results are available, click to see"
-msgstr ""
+msgstr "Налични са нови резултати от тестовете, кликнете, за да видите"
 
 #: web/skins/modern/diag/js/diag_js.php:426
 #: web/skins/modern/diag/js/diag_js.php:434
 msgid "See details"
-msgstr ""
+msgstr "Виж детайлите"
 
 #: web/skins/modern/diag/js/diag_js.php:436
-msgid "If you want to report your problem, fill fields bellow."
-msgstr ""
+msgid "If you want to report your problem, fill fields below."
+msgstr "Ако искате да докладвате проблема си, попълнете полетета по-долу."

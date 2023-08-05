@@ -58,7 +58,7 @@ if (!isset($_REQUEST['profile_id'])) {
     // okay, new SB profiles are allowed. 
     // but is there a support:email attribute on inst level?
     if (count($inst->getAttributes("support:email")) == 0) {
-        // user shouldn't have gotten that far; tricked his way in. No need to be verbose.
+        // user shouldn't have got that far; tricked his way in. No need to be verbose.
         throw new Exception("Attempt to create a new SB profile, but the inst does not have a support:email attribute!");
     }
     // Create one.
@@ -327,7 +327,7 @@ echo $deco->defaultPagePrelude(sprintf(_('Managing %s users'), \core\ProfileSilv
     });
 </script>
 <link rel='stylesheet' type='text/css' href='../external/jquery/jquery-ui.css' />
-<link rel='stylesheet' type='text/css' href='css/silverbullet.css' />
+<link rel='stylesheet' type='text/css' href='css/silverbullet.css.php' />
 </head>
 
 <body>

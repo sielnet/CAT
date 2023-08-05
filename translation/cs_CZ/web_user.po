@@ -13,10 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eduroam CAT\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-16 13:12+0200\n"
+"POT-Creation-Date: 2023-07-18 13:14+0200\n"
 "PO-Revision-Date: 2011-10-27 10:56+0000\n"
 "Last-Translator: Petr Adamec <p.b.adamec@gmail.com>, 2016-2019,2022\n"
-"Language-Team: Czech (Czech Republic) (http://www.transifex.com/"
+"Language-Team: Czech (Czech Republic) (http://app.transifex.com/"
 "eduroam_devel/cat/language/cs_CZ/)\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
@@ -797,7 +797,7 @@ msgstr ""
 "sítě eduroam® ve vašem okolí a zadat svoje přihlašovací údaje (uživatelské "
 "jméno a heslo nebo osobní certifikát) - a jste připojeni!"
 
-#: web/skins/modern/index.php:86 web/skins/modern/test.php:80
+#: web/skins/modern/index.php:87 web/skins/modern/test.php:80
 msgid "Authenticating"
 msgstr "Přihlašování"
 

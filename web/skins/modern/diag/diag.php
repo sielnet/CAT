@@ -50,11 +50,11 @@ if ($operatingSystem) {
     print "recognisedOS = '" . $operatingSystem['device'] . "';\n";
 }
 require dirname(__DIR__) . '/user/js/cat_js.php';
-
+$cssUrl = $Gui->skinObject->findResourceUrl("CSS", "cat-user.css.php");
 ?>
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" media="screen" type="text/css" href="<?php echo $Gui->skinObject->findResourceUrl("CSS", "cat-user.css"); ?>" />
+<link rel='stylesheet' type='text/css' href='<?php echo $cssUrl ?>' />";
 <link rel="stylesheet" media="screen" type="text/css" href="<?php echo $Gui->skinObject->findResourceUrl("CSS", "diag.css", "diag"); ?>" />
 </head>
 <body>
@@ -572,7 +572,7 @@ require dirname(__DIR__) . '/diag/js/diag_js.php';
                         testSociopath(realm, 0);
                     } else {
                         var title = <?php echo '"' . _("Diagnostics results for selected realms") . '"'; ?>;
-                        result = '<div class="padding"><h3>' + <?php echo '"' . _("An unknown problem occured") . '"'; ?>;
+                        result = '<div class="padding"><h3>' + <?php echo '"' . _("An unknown problem occurred") . '"'; ?>;
                         result = result + '</h3>'
                         if (r.length == 1) {
                             result = result + <?php echo '"' . _("This test includes checking of the following realm") . '"'; ?>;

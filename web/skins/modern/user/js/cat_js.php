@@ -20,8 +20,8 @@
  */
 
 
-/* General AJAX comment: im many places we do not specfy the json argument in the
- * handler function and do the JSON decoding explicitely. The reason for this
+/* General AJAX comment: im many places we do not specify the json argument in the
+ * handler function and do the JSON decoding explicitly. The reason for this
  * is debugging - it is much easier to dump the raw JSON output fr a quick look.
  * To make the code cleaner it might be a good idea to change these calls in the future.
  */
@@ -62,6 +62,8 @@ var openroaming = 'none';
 var preagreed = false;
 var pressedButton;
 var profileDevices;
+var recognisedOS;
+var currentDevice;
 const discoCountries = {
 <?php 
     $C = $Gui->printCountryList(1);
@@ -125,7 +127,7 @@ var discoTextStrings = {
   "geoLoc_getting" : "<?php $cat->javaScriptEscapedEcho(_("Getting your location...")) ?>",
   "geoLoc_nearby" : "<?php $cat->javaScriptEscapedEcho(_("Nearby providers shown on top.")) ?>",
 };
-var roller; // controlls if the system sliedes apper on the page
+var roller; // controls if the system sliedes apper on the page
 if (roller === undefined)
     roller = 0;
 var noDisco;
@@ -135,7 +137,7 @@ var sbPage;
 if (sbPage === undefined)
     sbPage = 0;
     
-// used to keep the footer at the bottom whle the window is resized
+// used to keep the footer at the bottom while the window is resized
 $.fn.redraw = function() {
   $(this).each(function() {
     var redraw = this.offsetHeight;
@@ -145,7 +147,9 @@ $.fn.redraw = function() {
 function otherInstallers() {
   clearUIsettings();
   $(".guess_os").hide();
+  $("#message_only").hide();
   $("#other_installers").show();
+  $("#devices").show();
   $("#devices").redraw();
   reset_footer();
 }
@@ -244,7 +248,7 @@ function printP(i,v) {
 
 // showProfile displays a single profile and the corresponding download buttons
 // the argument is the numeric profile identifier
-// Other than hiding unncecessay elements the function is essentialy an AJAX
+// Other than hiding unncecessay elements the function is essentially an AJAX
 // handler for profileAttributes call
 function showProfile(prof) {
   $("#profile_redirect").hide();
@@ -308,8 +312,8 @@ function showProfile(prof) {
       return;
     }
     profileDevices = j.devices;
-    mydev=findDevice(recognisedOS);
-    console.log("recognisedOS:"+mydev);
+    currentDevice=findDevice(recognisedOS);
+    console.log("recognisedOS:"+currentDevice);
     // create the main download page section
 
     
@@ -324,10 +328,10 @@ function showProfile(prof) {
       reset_footer();
       return;
     }
-    updateGuessOsDiv(mydev);
+    updateGuessOsDiv(currentDevice);
     resetDevices(false);
     // first handle the guess_os part
-    if (!handleGuessOs(mydev))
+    if (handleGuessOs(currentDevice) == 0)
       return; 
     // now the full devices list
     $.each(j.devices,function(i,v) {
@@ -385,7 +389,9 @@ function handlePreagreed() {
     if (openroaming == 'ask') {
       $("#or_text_1").show();
     }
-    $("#openroaming_tou").show();
+    if (currentDevice.options.message_only != 1) {
+        $("#openroaming_tou").show();
+    }
   } else {
     $("#openroaming_check").prop("checked", true);
     $("#openroaming_check").trigger("change");
@@ -525,7 +531,11 @@ function deviceInfo(data) {
 
 function handleGuessOs(recognisedDevice) {
     if (recognisedDevice == null)
-        return true;
+        return 1;
+    if(recognisedDevice.options.message_only == 1) {
+        $("#guess_os").html("<div id='message_only'>"+recognisedDevice.message+"</div>");
+        return 1;
+    }
     if(recognisedDevice.redirect != '0') {
         $('.device_info').html('');
         $('.more_info_b').hide();
@@ -537,9 +547,9 @@ function handleGuessOs(recognisedDevice) {
         $(".redirect_link").click(function(event) {
          i_div.hide('fast');
       });
-      return true;
+      return 1;
     }
-  // handle devices that canot be configured due to lack of support
+  // handle devices that cannot be configured due to lack of support
   // for required EAP methods
   /*
   if (recognisedDevice.status > 0 && recognisedDevice.redirect == '0') {
@@ -602,24 +612,29 @@ function handleGuessOs(recognisedDevice) {
       }
     });           
   }
-  return true;
+  return 1;
 }
 
 
 function changeDevice(devId) {
-  device = findDevice(devId);
-  if (device.options.hs20 === undefined) {
+  currentDevice = findDevice(devId);
+  if (currentDevice.options.hs20 === undefined) {
       recognisedOShs20 = 0;
   } else {
-      recognisedOShs20 = device.options.hs20;
+      recognisedOShs20 = currentDevice.options.hs20;
   }
-  recognisedOS = device.id;
-  $("#device").val(device.id);
-  updateGuessOsDiv(device);
+  recognisedOS = currentDevice.id;
+  $("#device").val(currentDevice.id);
+  updateGuessOsDiv(currentDevice);
   resetOpenRoaming(recognisedOS, recognisedOShs20);
-  if (!handleGuessOs(device))
+  guessOsRes = handleGuessOs(currentDevice);
+  if (guessOsRes == 0)
     return;
-  $("#devices").show();
+  if (guessOsRes == 2) {
+    $("#devices").hide();
+  } else {
+    $("#devices").show();
+  }
   $("div.guess_os").show();
   $("#other_installers").hide();
   reset_footer();
@@ -971,7 +986,9 @@ $(document).ready(function() {
     }
   });
 
-  reset_footer();
+  setTimeout(() => {  reset_footer(); }, 50);
+
+//  reset_footer();
   $( window ).resize(function(event) {
     if ($( window ).width() > 750) {
       $("#menu_top > ul").show();

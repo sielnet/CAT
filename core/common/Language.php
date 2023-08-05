@@ -53,6 +53,11 @@ class Language
     public $locale;
 
     /**
+     * Is the currently set language a right-to-left language?
+     */
+    public $rtl;
+    
+    /**
      *  Constructor sets the language by calling set_lang 
      *  and stores language settings in object properties
      *  additionally it also sets static variables $laing_index and $root
@@ -62,13 +67,14 @@ class Language
         $language = $this->setLang();
         $this->LANG = $language[0];
         $this->locale = $language[1];
+        $this->rtl = $language[2];
     }
 
     /**
      * Sets the gettext domain
      *
      * @param string $domain the text domain
-     * @return string previous seting so that you can restore it later
+     * @return string previous setting so that you can restore it later
      */
     public function setTextDomain($domain)
     {
@@ -87,8 +93,8 @@ class Language
      * checks if lang has been declared in the http call
      * if not, checks for saved lang in the SESSION
      * or finally checks browser properties.
-     * Only one of the supported langiages can be set
-     * if a match is not found, the default langiage is used
+     * Only one of the supported languages can be set
+     * if a match is not found, the default language is used
      * @param int $hardSetLang - this is currently not used but will allow to force lang setting if this was ever required
      * @return array the language that was set
      */
@@ -96,12 +102,13 @@ class Language
     {
         // $langConverted will contain candidates for the language setting in the order
         // of prefference
+        $loggerInstance = new \core\common\Logging();
         $langConverted = [];
         if ($hardSetLang !== 0) {
             $langConverted[] = $hardSetLang;
         }
         if (!empty($_REQUEST['lang'])) {
-            $recoverLang = filter_input(INPUT_GET, 'lang', FILTER_SANITIZE_STRING) ?? filter_input(INPUT_POST, 'lang', FILTER_SANITIZE_STRING);
+            $recoverLang = (!empty($_GET['lang']) ? htmlspecialchars($_GET['lang']) : htmlspecialchars($_POST['lang']));
             $langConverted[] = $recoverLang;
         }
         \core\CAT::sessionStart();
@@ -122,7 +129,7 @@ class Language
         $langConverted[] = $langIndex;
         setlocale(LC_ALL, 0);
         foreach ($langConverted as $tryLang) {
-            // madness! setlocale is completely unflexible. If $tryLang is "en"
+            // madness! setlocale is completely inflexible. If $tryLang is "en"
             // it will fail, because it only knows en_US, en_GB a.s.o.
             // we need to map stuff manually
             $localeTmp = FALSE;
@@ -135,8 +142,8 @@ class Language
                     break;
                 }
             }
-            // make sure that the selected locale is actually instlled on this system
-            // normally this should not be needed, but it is a safeguard agains misconfiguration
+            // make sure that the selected locale is actually installed on this system
+            // normally this should not be needed, but it is a safeguard against misconfiguration
             if ($localeTmp) {
                 if (setlocale(LC_ALL, $localeTmp)) {
                     $theLocale = $localeTmp;
@@ -144,12 +151,12 @@ class Language
                 }
             }
         }
+        $isRtl = \config\Master::LANGUAGES[$langIndex]['rtl'];
         putenv("LC_ALL=" . $theLocale);
         $_SESSION['language'] = $langIndex;
-        $loggerInstance = new \core\common\Logging();
         $loggerInstance->debug(4, "selected lang:$langIndex:$theLocale\n");
         $loggerInstance->debug(4, print_r($langConverted, true));
-        return([$langIndex, $theLocale]);
+        return([$langIndex, $theLocale,$isRtl]);
     }
 
     /**
@@ -166,7 +173,7 @@ class Language
      * pick a proper value for a given language
      * @param array $valueArray an array of (locale,content) records
      * @return string localised value corresponding to the chosen
-     * locale or to the defalut locale C if a better mach was not available
+     * locale or to the default locale C if a better mach was not available
      */
     public function getLocalisedValue($valueArray)
     {

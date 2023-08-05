@@ -112,7 +112,7 @@ abstract class AbstractProfile extends EntityWithDBProperties
 
     /**
      * This class also needs to handle frontend operations, so needs its own
-     * access to the FRONTEND datbase. This member stores the corresponding 
+     * access to the FRONTEND database. This member stores the corresponding 
      * handle.
      * 
      * @var DBConnection
@@ -462,7 +462,7 @@ abstract class AbstractProfile extends EntityWithDBProperties
         }
         // we should pretty-print the device names
         $finalarray = [];
-        $devlist = \devices\Devices::listDevices();
+        $devlist = \devices\Devices::listDevices($this->identifier);
         foreach ($returnarray as $devId => $count) {
             if (isset($devlist[$devId])) {
                 $finalarray[$devlist[$devId]['display']] = $count;
@@ -541,7 +541,7 @@ abstract class AbstractProfile extends EntityWithDBProperties
      * Performs a sanity check for a given EAP type - did the admin submit enough information to create installers for him?
      * 
      * @param common\EAP $eaptype the EAP type
-     * @return mixed TRUE if the EAP type is complete; an array of missing attribues if it's incomplete; FALSE if it's incomplete for other reasons
+     * @return mixed TRUE if the EAP type is complete; an array of missing attributes if it's incomplete; FALSE if it's incomplete for other reasons
      */
     public function isEapTypeDefinitionComplete($eaptype)
     {
@@ -600,7 +600,13 @@ abstract class AbstractProfile extends EntityWithDBProperties
         }
         $preferredEap = $this->getEapMethodsinOrderOfPreference(1);
         $eAPOptions = [];
-        foreach (\devices\Devices::listDevices() as $deviceIndex => $deviceProperties) {
+        if (count($this->getAttributes("media:openroaming")) == 1 && $this->getAttributes("media:openroaming")[0]['value'] == 'always-preagreed') {
+            $orAlways = 1;
+        } else {
+            $orAlways = 0;
+        }
+        
+        foreach (\devices\Devices::listDevices($this->identifier, $orAlways) as $deviceIndex => $deviceProperties) {
             $factory = new DeviceFactory($deviceIndex);
             $dev = $factory->device;
             // find the attribute pertaining to the specific device
@@ -671,7 +677,7 @@ abstract class AbstractProfile extends EntityWithDBProperties
     /**
      * prepare profile attributes for device modules
      * Gets profile attributes taking into account the most specific level on which they may be defined
-     * as wel as the chosen language.
+     * as well as the chosen language.
      * can be called with an optional $eap argument
      * 
      * @param array $eap if specified, retrieves all attributes except those not pertaining to the given EAP type
@@ -765,6 +771,10 @@ abstract class AbstractProfile extends EntityWithDBProperties
         if (!isset($attribs['media:SSID']) &&
                 (!isset(\config\ConfAssistant::CONSORTIUM['ssid']) || count(\config\ConfAssistant::CONSORTIUM['ssid']) == 0) &&
                 !isset($attribs['media:wired'])) {
+            $properConfig = FALSE;
+        }
+        // institutions without a name are not really a corner case we should support
+        if (!isset($attribs['general:instname'])) {
             $properConfig = FALSE;
         }
         return $properConfig;

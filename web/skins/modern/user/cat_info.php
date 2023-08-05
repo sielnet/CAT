@@ -27,7 +27,7 @@
  *
  * This handles the popups from the main menu. The page argument is saved in the $page variable and used
  * to select the proper handler. If the contents is read form a file which supplies its own title
- * then you need to preappend the returned data with the 'no_title' sting, this will cause
+ * then you need to preappend the returned data with the 'no_title' string, this will cause
  * the receiving end to strip this marker and not add the title by itself.
  *
  */
@@ -51,10 +51,10 @@ switch ($page) {
          " . $Tou['title'] . "
     </h1>
 <div id='tou_1'>" . $Tou['subtitle'] .
-                $Tou['short'] . "
+               '<div style="direction:ltr">' . $Tou['short'] . "</div>
 </div>
 <div id='all_tou_link'><a href='javascript:showTOU()'>Click here to see the full terms</a></div>
-<div id='tou_2' style='display:none; padding-top:20px'>" .
+<div id='tou_2' style='display:none; padding-top:20px; direction:ltr'>" .
                 $Tou['full'] . "
 </div>
 </div>
